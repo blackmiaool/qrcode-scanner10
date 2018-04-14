@@ -10,7 +10,7 @@ const rename = require("gulp-rename");
 
 const sourceDir='./src';
 gulp.task('css', function () {
-    return gulp.src([`${sourceDir}/**/*.less`], {
+    return gulp.src([`${sourceDir}/style.less`], {
         base: sourceDir
     })
     .pipe(less({}))
@@ -50,4 +50,4 @@ gulp.task('default', (() => {
     gulp.start(['css']);
 }));
 
-gulp.watch(`${sourceDir}/**/*.less`, ['css']);
+gulp.watch(`${sourceDir}/style.less`, ['css']);

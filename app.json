@@ -1,14 +1,14 @@
 {
   "expo": {
     "name": "qrcode-scanner10",
-    "description": "This project is really great.",
+    "description": "ad-free qrcode scanner",
     "slug": "qrcode-scanner10",
     "privacy": "public",
     "sdkVersion": "26.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/img.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -22,6 +22,9 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.blackmiaool.qrcodescanner10"
     }
   }
 }

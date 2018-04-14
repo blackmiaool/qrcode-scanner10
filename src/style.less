@@ -6,11 +6,32 @@ rn-config{//style's config
     justify-content: center;
 }
 App {
+    .btn-primary{
+        border-color: #333;
+        border-width:1;
+        font-size: 20;
+        border-radius: 5;
+        background-color: steelblue;
+        color: #fff;  
+        
+    }
+    
     .container{
         flex:1;
         align-items: center;
         justify-content: flex-start;
         background-color: #000;
+    }
+    .scanner-container{      
+        position: relative;
+        .scanner{
+            height: 300;
+            width:100vw;
+        }
+        .scan-again-btn{
+            padding:10 20;
+            
+        }
     }
     .reload-container{
         .flex-center();
@@ -18,21 +39,47 @@ App {
         flex-direction: row;
         width: 100vw;
         height:50%;
-        .scan-again-btn{
-            padding:10 20;
-            border-color: #333;
-            border-width:1;
-            font-size: 20;
-            border-radius: 5;
-            background-color: steelblue;
-            color: #fff;   
-        }
+        
     }
     .result-container{
         flex:1;
         background-color: #f6f6f6;
         width:100vw;
-        height:30vw;
         border-top:3px solid #777;
+        padding:5vw;
+        .result-area{
+            .label{
+                font-size:18;
+            }
+            .result-input{ 
+                background-color: rgba(0,0,0,0.05);
+                // border:1 gray;
+                padding: 10 4;
+                font-size:16;
+            }
+            margin-bottom: 20;
+        }
+        .tools-wrap{
+            flex-direction: row;
+            flex-wrap: wrap;
+            .tool-btn{
+                padding:12 10; 
+                font-size:20;
+                // flex:1;
+                width:40vw;
+                // margin:1vw;
+                text-align: center;
+                
+            }
+            margin-bottom: 4vw;
+            justify-content:space-around;
+        }
+        
+        // .copy-btn{
+        //     padding:5 10; 
+        //     font-size:14;
+        //     width:60;
+        //     text-align: center;
+        // }
     }
 }
