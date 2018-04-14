@@ -10,6 +10,7 @@ import {
   TextInput,
   Clipboard,
   Share,
+  ScrollView
 } from 'react-native';
 import Toast from 'react-native-root-toast';
 import {
@@ -22,7 +23,7 @@ import {
 import { rnLess } from 'rn-less/src/runtime';
 import style from './style.less.js';
 
-const rootStyle = style({ vw: Dimensions.get('window').width / 100 });
+const rootStyle = style({ vw: Dimensions.get('window').width / 100,sh:Dimensions.get('window').height });
 
 function addParam(url, key, value) {
   url=url.replace(new RegExp(`[?&]${key}=[^&]*&?`,'g'),(str)=>str[str.length-1]==="&"?str[0]:"");
@@ -41,8 +42,8 @@ function addParam(url, key, value) {
 export default class App extends React.Component {
   state = {
     hasCameraPermission: null,
-    lastScannedData: "https://a.b",
-    scanning: true
+    lastScannedData: "",
+    scanning: true  
   };  
   componentDidMount() {
     this._requestCameraPermission();
@@ -134,12 +135,12 @@ export default class App extends React.Component {
   }
   renderScanner() {
     if (this.state.hasCameraPermission === null) {
-      return <Text>Requesting for camera permission</Text>;
+      return <View style="scanner-container"><Text>Requesting for camera permission</Text></View>;
     }
     if (this.state.hasCameraPermission === false) {
-      return <Text style={{ color: '#fff' }}>
+      return <View  style="scanner-container"><Text style={{ color: '#fff' }}>
         Camera permission is not granted
-        </Text>;
+        </Text></View>;
     }
     return <View style="scanner-container"><BarCodeScanner
       onBarCodeRead={this._handleBarCodeRead}
@@ -148,7 +149,7 @@ export default class App extends React.Component {
 
   }
   renderResultPanel() {
-    return <View style="result-container">
+    return <ScrollView style="result-container" contentContainerStyle={{paddingVertical:20}}>
       <View style="result-area">
         <Text style="label">
           Result
@@ -188,7 +189,7 @@ export default class App extends React.Component {
           <Text style={["btn-primary", "tool-btn"]}>Debug</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   }
   render() {
     this.windowWidth = Dimensions.get('window').width;

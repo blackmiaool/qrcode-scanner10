@@ -1,5 +1,5 @@
 rn-config{//style's config
-    arguments: vw;//arguments used in less
+    arguments: sh,vw;//arguments used in less
 }
 .flex-center(){
     align-items: center;
@@ -17,16 +17,19 @@ App {
     }
     
     .container{
-        flex:1;
+        flex:1;        
         align-items: center;
         justify-content: flex-start;
         background-color: #000;
     }
     .scanner-container{      
         position: relative;
+        height: sh/2;
+        
         .scanner{
-            height: 300;
-            width:100vw;
+            height: sh/2;  
+            width:50vw;          
+            // width:100vw;
         }
         .scan-again-btn{
             padding:10 20;
@@ -42,11 +45,11 @@ App {
         
     }
     .result-container{
-        flex:1;
+        height:sh/2;
         background-color: #f6f6f6;
         width:100vw;
         border-top:3px solid #777;
-        padding:5vw;
+        padding:0 5vw;
         .result-area{
             .label{
                 font-size:18;
@@ -71,7 +74,7 @@ App {
                 text-align: center;
                 
             }
-            margin-bottom: 4vw;
+            padding-bottom: 4vw;
             justify-content:space-around;
         }
         

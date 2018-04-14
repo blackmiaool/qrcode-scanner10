@@ -1,7 +1,7 @@
 
 const { StyleSheet } = require('react-native');
 
-module.exports = function({vw}){
+module.exports = function({sh,vw}){
     const allStyle = StyleSheet.create({
         s0: {
             backgroundColor: "steelblue",
@@ -18,11 +18,12 @@ module.exports = function({vw}){
             justifyContent: "flex-start"
         },
         s2: {
+            height: sh/2,
             position: "relative"
         },
         s3: {
-            height: 300,
-            width: (vw*100)|0
+            height: sh/2,
+            width: (vw*50)|0
         },
         s4: {
             paddingBottom: 10,
@@ -42,8 +43,11 @@ module.exports = function({vw}){
             backgroundColor: "#f6f6f6",
             borderTopColor: "#777",
             borderTopWidth: 3,
-            flex: 1,
-            padding: (vw*5)|0,
+            height: sh/2,
+            paddingBottom: 0,
+            paddingLeft: (vw*5)|0,
+            paddingRight: (vw*5)|0,
+            paddingTop: 0,
             width: (vw*100)|0
         },
         s7: {
@@ -64,7 +68,7 @@ module.exports = function({vw}){
             flexDirection: "row",
             flexWrap: "wrap",
             justifyContent: "space-around",
-            marginBottom: (vw*4)|0
+            paddingBottom: (vw*4)|0
         },
         s11: {
             fontSize: 20,
