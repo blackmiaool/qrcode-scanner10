@@ -1,0 +1,38 @@
+rn-config{//style's config
+    arguments: vw;//arguments used in less
+}
+.flex-center(){
+    align-items: center;
+    justify-content: center;
+}
+App {
+    .container{
+        flex:1;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: #000;
+    }
+    .reload-container{
+        .flex-center();
+        background-color: white;
+        flex-direction: row;
+        width: 100vw;
+        height:50%;
+        .scan-again-btn{
+            padding:10 20;
+            border-color: #333;
+            border-width:1;
+            font-size: 20;
+            border-radius: 5;
+            background-color: steelblue;
+            color: #fff;   
+        }
+    }
+    .result-container{
+        flex:1;
+        background-color: #f6f6f6;
+        width:100vw;
+        height:30vw;
+        border-top:3px solid #777;
+    }
+}
